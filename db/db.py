@@ -2,8 +2,12 @@ from pymongo.mongo_client import MongoClient
 from pymongo.errors import ConnectionFailure, ServerSelectionTimeoutError
 from pymongo.server_api import ServerApi
 import time
+from dotenv import load_dotenv
+import os
 
-uri = "mongodb+srv://shin97:iamken1000_7@cluster0.5v8wnhs.mongodb.net/?retryWrites=true&w=majority"
+load_dotenv()
+
+uri=os.getenv('uri')
 
 #handling db connection error
 max_retries=3 # defining max no to retries to be performed

@@ -1,86 +1,55 @@
-# Library System API using FastAPI
+# FastAPI Book API
 
-## Overview
+This is a simple FastAPI application for managing books using MongoDB.
 
-This is a simple RESTful API built with FastAPI to manage a library system. It provides endpoints for basic CRUD operations on books.
+## Prerequisites
 
-## Requirements
+Before running the application, make sure you have the following installed:
 
-- Python 3.7+
-- FastAPI
-- Uvicorn
+- Python 3.7 or higher
+- MongoDB Atlas account (or a local MongoDB instance)
 
-## Installation
+## Setup
 
 1. Clone the repository:
 
-    bash
-    git clone 
-    cd restapi-letsbloom
-    
+```bash
+git clone https://github.com/Shanu79/restapi-letsbloom.git
+cd fastapi-book-api
+```
 
-2. Create a virtual environment:
+2. Install dependencies:
 
-    bash
-    python -m venv venv
-    
+```bash
+pip install -r requirements.txt
+```
 
-3. Activate the virtual environment:
+3. Configure MongoDB:
 
-    - On Windows:
+   - Create a MongoDB Atlas cluster or use a local MongoDB instance.
+   - Update the `uri` variable in the `app.py` file with your MongoDB connection string.
 
-        bash
-        venv\Scripts\activate
-        
+4. Run the application:
 
-    - On Unix or MacOS:
+```bash
+uvicorn main:app --reload
+```
 
-        bash
-        source venv/bin/activate
-        
+The application should now be running at [http://localhost:8000](http://localhost:8000).
 
-4. Install dependencies:
+## API Documentation
 
-    bash
-    pip install -r requirements.txt
-    
+Visit [http://localhost:8000/docs](http://localhost:8000/docs) to access the Swagger UI for API documentation.
 
-## Database Setup
+## Endpoints
 
-1. Make sure you have a running PostgreSQL server.
-
-2. Create a database and update the database URI in main.py:
-
-    python
-    DATABASE_URI = "postgresql://username:password@localhost/library_db"
-    
-
-## Running the Application
-
-1. Start the Uvicorn server:
-
-    bash
-    uvicorn main:app --reload
-    
-
-2. The API will be available at [http://127.0.0.1:8000](http://127.0.0.1:8000).
-
-## API Endpoints
-
-- *Retrieve All Books:* [http://127.0.0.1:8000/books](http://127.0.0.1:8000/books) (GET)
-
-## Documentation
-
-Access the Swagger documentation at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) and explore the API endpoints.
+- **GET /api/books**: List all books.
 
 ## Contributing
 
-Feel free to contribute by submitting issues or pull requests.
+Feel free to contribute by opening issues or submitting pull requests.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-Feel free to customize this README based on your specific project structure and requirements.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```
