@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Body, Request, Response, HTTPException, status
-from schema.schemas import list_serial
+from schema.schemas import list_serial, individual_serial
 
 from models.booksModel import Book, BookUpdate
 from db.db import collection
@@ -38,8 +38,22 @@ async def add_book(request: Request, book: Book = Body(...)):
 
 
 #put books
+@book.get("/api/books/{id}")
+async def get_book(id: str):
+    getbook=collection.find_one({"_id": ObjectId(id)})
+    book=individual_serial(getbook)
+    # print(getbook)
+    return book
+
 @book.put("/api/books/{id}")
 async def put_books(id, book: Book):
-    collection.find_one_and_update({"_id":ObjectId(id)},{
-        "$set":dict(book)
-    })
+    existing_book=collection.find_one({"_id":ObjectId(id)})
+    if existing_book is None:
+        raise HTTPException(status_code=404, detail="Book not found")
+    
+    result=collection.update_one({"_id": ObjectId(id)}, {"$set": dict(book)})
+
+    if result.modified_count==0:
+        raise HTTPException(status_code=500, detail="failed to update book")
+    
+    return {"message": "Book updated successfully"}
