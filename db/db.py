@@ -31,6 +31,5 @@ try:
 except ConnectionError as e:
     print(e)
 
-
 db=db_client["books"]
 collection=db["test"]
