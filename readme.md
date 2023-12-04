@@ -47,6 +47,8 @@ Visit [http://localhost:8000/docs](http://localhost:8000/docs) to access the Swa
 ## Endpoints
 
 - **GET /api/books**: List all books.
+- **POST /api/books**: Add new books.
+- **PUT /api/books/{id}**: Update books
 
 ## Contributing
 
