@@ -27,9 +27,12 @@ pip install -r requirements.txt
 3. Configure MongoDB:
 
    - Create a MongoDB Atlas cluster or use a local MongoDB instance.
-   - Update the `uri` variable in the `app.py` file with your MongoDB connection string.
 
-4. Run the application:
+4. Configure the .env file:
+   - create a new .env file
+   - Update the `uri` variable in the `.env` file with your MongoDB connection string.
+
+5. Run the application:
 
 ```bash
 uvicorn main:app --reload
