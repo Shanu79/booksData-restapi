@@ -49,4 +49,5 @@ Visit [http://localhost:8000/docs](http://localhost:8000/docs) to access the Swa
 - **GET /api/books**: List all books.
 - **POST /api/books**: Add new books.
 - **PUT /api/books/{id}**: Update books
+- **/seed-database**: Seed the Database with dummy data
 
