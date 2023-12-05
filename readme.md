@@ -15,7 +15,7 @@ Before running the application, make sure you have the following installed:
 
 ```bash
 git clone https://github.com/Shanu79/restapi-letsbloom.git
-cd fastapi-book-api
+cd restapi-letsbloom-master
 ```
 
 2. Install dependencies:
