@@ -50,10 +50,3 @@ Visit [http://localhost:8000/docs](http://localhost:8000/docs) to access the Swa
 - **POST /api/books**: Add new books.
 - **PUT /api/books/{id}**: Update books
 
-## Contributing
-
-Feel free to contribute by opening issues or submitting pull requests.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
